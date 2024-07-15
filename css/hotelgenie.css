@@ -2204,9 +2204,17 @@ figcaption {
   margin-bottom: 120px;
   display: flex;
 }
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
 .section {
   padding: 120px 2rem;
   position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .section.style-hero {
   background-color: #020c1b;
@@ -6778,8 +6786,180 @@ figcaption {
     box-sizing: border-box;
   }
 }
+/* General styling for the section */
+section.cards {
+  color: var(--white-smoke);
+  background-color: #0c0c0c;
+  padding-top: 120px;
+  padding-bottom: 60px; /* Add some bottom padding for spacing */
+}
 
-.sections {
-  padding: 0px;
+.slider-container {
   position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider-item {
+  flex: 1 0 50%; /* Makes the items take half of the container's width */
+  box-sizing: border-box;
+  padding: 20px; /* Add some padding if needed */
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .slider-item {
+    flex: 1 0 100%; /* Makes the items take full width on medium screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-item {
+    flex: 1 0 100%; /* Makes the items take full width on small screens */
+    padding: 5px; /* Adjust padding for smaller screens */
+  }
+
+  .slider-arrow {
+    padding: 5px; /* Adjust arrow size for smaller screens */
+  }
+}
+
+@media (max-width: 479px) {
+  .slider-item {
+    flex: 1 0 100%; /* Makes the items take full width on very small screens */
+    padding: 5px; /* Adjust padding for smaller screens */
+  }
+
+  .slider-arrow {
+    padding: 5px; /* Adjust arrow size for smaller screens */
+    font-size: 12px; /* Adjust arrow font size for smaller screens */
+  }
+}
+
+/* General Styles */
+:root {
+  --background-dark: #0c0c0c;
+  --white-smoke: #f5f5f5;
+}
+
+.section.process {
+  background-color: var(--background-dark);
+  color: var(--white-smoke);
+  padding: 40px 20px; /* Adjust padding for better spacing */
+}
+
+.sticky-container.process {
+  grid-column-gap: 0rem;
+  grid-row-gap: 0rem;
+  max-width: 1400px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.process-title {
+  font-variation-settings: "wght" 528;
+  margin-bottom: 15px;
+  font-size: 40px;
+}
+
+.rich-text-block.process {
+  margin-top: 0;
+}
+
+.process-wrapper {
+  margin-bottom: 20px;
+}
+
+.rich-text-block.process {
+  margin-top: 20px;
+}
+
+.process-title {
+  font-size: 35px;
+}
+
+/* Header Specific Styles */
+.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.process-wrapper {
+  margin: 0 auto; /* Center the process-wrapper */
+}
+
+.heading-large {
+  max-width: 800px; /* Adjust this value as needed */
+  margin: 0 auto; /* Center the heading */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .section.process {
+    padding: 20px 10px;
+  }
+
+  .process-title {
+    font-size: 28px;
+  }
+
+  .step-container {
+    margin-bottom: 20px;
+  }
+
+  .text-4xl {
+    font-size: 2rem;
+  }
+
+  .text-large.list {
+    font-size: 1.5rem;
+  }
+
+  .text-medium.text-neutral-400 {
+    font-size: 1rem;
+  }
+
+  .step-container {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+  }
+
+  .w-layout-grid {
+    display: block;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .row-gap {
+    margin-top: 10px;
+  }
 }
